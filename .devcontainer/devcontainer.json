@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/universal
+{
+	"name": "Default Linux Universal",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "docker/dev-environments-default:stable-1",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "curl -s 'https://ci.comcast.net/api/v1/cli?arch=amd64&platform=linux'   -H 'authority: ci.comcast.net'   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'   -H 'accept-language: en-US,en;q=0.9'   -H 'dnt: 1'   -H 'sec-ch-ua: \"Not_A Brand\";v=\"99\", \"Google Chrome\";v=\"109\", \"Chromium\";v=\"109\"'   -H 'sec-ch-ua-mobile: ?0'   -H 'sec-ch-ua-platform: \"macOS\"'   -H 'sec-fetch-dest: document'   -H 'sec-fetch-mode: navigate'   -H 'sec-fetch-site: none'   -H 'sec-fetch-user: ?1'   -H 'upgrade-insecure-requests: 1'   -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'   --compressed --output /tmp/fly; sudo chmod 755 /tmp/fly; sudo mv /tmp/fly /bin; sudo apt-get -qq update -y; sudo apt-get -qq install -y expect nodejs npm;"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
+
