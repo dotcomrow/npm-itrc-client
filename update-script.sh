@@ -68,10 +68,10 @@ increment_version() {
 sudo apt-get -qq install -y jq
 
 VERSION="$(cat package.json | jq -r '.version')"
-echo "Version detected -> $VERSION <- Incrementing..."
 NEW_VERSION=$(increment_version $VERSION)
-echo "New version -> $NEW_VERSION"
-jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json >package.json
+echo "Version detected -> $VERSION <- Incrementing to -> $NEW_VERSION"
+
+echo $(jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json) > package.json
 npm install
 git add -A
 git commit -m "performing update"

@@ -1,0 +1,1 @@
+{"name":"npm-itrc-client","version":"1.0.36","description":"A CLI to manage a TODO list","main":"index.js","scripts":{"start":"node index.js","test":"jest"},"keywords":["MIT"],"author":"Chris Lyons","license":"MIT","dependencies":{"chalk":"^4.1.0","commander":"^7.2.0","conf":"^9.0.2","fs":"^0.0.1-security","jest":"^29.4.3","requests":"^0.3.0"},"bin":{"itrc":"index.js"}}
