@@ -1,11 +1,9 @@
 const request = require('requests')
 
-function query (task) {
-    
-    //display message to user
-    console.log(
-        'test message'
-    )
+function getConnection () {
+    return {
+        "log":"test"
+    }
 }
 
-module.exports = query
+module.exports = getConnection
