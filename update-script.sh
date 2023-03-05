@@ -80,10 +80,6 @@ echo "Version detected -> $VERSION <- Incrementing to -> $NEW_VERSION"
 echo $(jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json) > package.json
 echo $(jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json) > package-lock.json
 
-LOCK_VERSION="$(cat package-lock.json | jq -r '.lockfileVersion')"
-NEW_LV=$(increment_version $LOCK_VERSION)
-echo $(jq --arg newval "$NEW_LV" '.lockfileVersion |= $newval' package.json) > package-lock.json
-
 npm install
 git add -A
 git commit -m "performing update"
