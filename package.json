@@ -1,6 +1,6 @@
 {
   "name": "npm-itrc-client",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "A CLI to manage a TODO list",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "chalk": "^4.1.0",
     "commander": "^7.2.0",
     "conf": "^9.0.2",
-    "jest": "^29.4.3"
+    "jest": "^29.4.3",
+    "requests": "^0.3.0"
   },
   "bin": {
     "itrc": "index.js"
