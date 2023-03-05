@@ -21,7 +21,7 @@ function list () {
         })
     } else {
         console.log(
-            chalk.red.bold('You don\'t have any tasks yet.')
+            chalk.red.bold('You don\'t have any tasks yet and this message was updated!')
         )
     }
 }
