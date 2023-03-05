@@ -80,7 +80,6 @@ echo "Version detected -> $VERSION <- Incrementing to -> $NEW_VERSION"
 echo $(jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json) > package.json
 echo $(jq --arg newval "$NEW_VERSION" '.version |= $newval' package.json) > package-lock.json
 
-npm install
 git add -A
 git commit -m "performing update"
 git push
