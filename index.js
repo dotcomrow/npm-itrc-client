@@ -11,4 +11,11 @@ program
     .description('query ITRC system and return values in query string')
     .action(query)
 
+program
+    .command('version')
+    .description('Return program version')
+    .action(() => {
+        var pjson = require('./package.json');
+        console.log('Program Version -> ' + pjson.version)  
+    })
 program.parse()
