@@ -1,4 +1,4 @@
-const conf = new (require('conf'))()
+const Conf = new (require('conf'))()
 const chalk = require('chalk')
 const config = new Conf({projectName: 'foo'});
 
