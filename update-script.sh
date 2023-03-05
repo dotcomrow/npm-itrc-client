@@ -1,5 +1,11 @@
 #!/bin/bash
 
+### this script runs on local devcontainer terminal.  No arguments or setup needed.
+## All this does is increment version in package json (if you forget to!)
+## And commit to github.  The package json version update kicks off the npm publish
+
+
+
 
 # Accepts a version string and prints it incremented by one.
 # Usage: increment_version <version> [<position>] [<leftmost>]
