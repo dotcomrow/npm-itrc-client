@@ -1,4 +1,5 @@
 const request = require('requests')
+const util = require('util')
 
 function getConnection (cli) {
     var https = require('follow-redirects').https;
