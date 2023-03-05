@@ -3,6 +3,12 @@ const { program } = require('commander')
 const list = require('./commands/list')
 const add = require('./commands/add')
 const markDone = require('./commands/markDone')
+const conf = new (require('conf'))()
+
+const config = new Conf({projectName: 'foo'});
+
+config.set('foo.bar', true);
+console.log(config.get('foo'));
 
 program
     .command('list')

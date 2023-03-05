@@ -1,5 +1,6 @@
 const conf = new (require('conf'))()
 const chalk = require('chalk')
+const config = new Conf({projectName: 'foo'});
 
 function list () {
     const todoList = conf.get('todo-list')
@@ -23,6 +24,7 @@ function list () {
         console.log(
             chalk.red.bold('You don\'t have any tasks yet and this message was updated!')
         )
+        console.log(config.get('foo'));
     }
 }
 
