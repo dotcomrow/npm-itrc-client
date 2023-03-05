@@ -1,24 +1,14 @@
 #! /usr/bin/env node
 const { program } = require('commander')
-const list = require('./commands/list')
-const add = require('./commands/add')
-const markDone = require('./commands/markDone')
-const conf = new (require('conf'))()
+const query = require('./commands/query')
 
 program
-    .command('list')
-    .description('List all the TODO tasks')
-    .action(list)
-
-program
-    .command('add <task>')
-    .description('Add a new TODO task')
-    .action(add)
-
-program
-    .command('mark-done')
-    .description('Mark commands done')
-    .option('-t, --tasks <tasks...>', 'The tasks to mark done. If not specified, all tasks will be marked done.')
-    .action(markDone)
+    .command('query')
+    .option('-a, --api <ITRC API Endpoint>', 'HTTPS ITRC API Endpoint')
+    .option('-u, --user <ITRC User>', 'ITRC API Enpoint User')
+    .option('-p, --password <ITRC Password>', 'ITRC API Password')
+    .option('-q, --query <ITRC Query String>', 'ITRC API Query string')
+    .description('query ITRC system and return values in query string')
+    .action(query)
 
 program.parse()
