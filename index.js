@@ -16,6 +16,6 @@ program
     .description('Return program version')
     .action(() => {
         var pjson = require('./package.json');
-        console.log('Program Version -> ' + pjson.version)  
+        console.log(pjson.version)  
     })
 program.parse()
