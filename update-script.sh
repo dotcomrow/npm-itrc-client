@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 npm install
-git commit -a 
+git add -A
+git commit -m "performing update"
+git push
