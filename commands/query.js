@@ -10,7 +10,7 @@ function query (args) {
     }
 
     conWrapper(urlOptions, null).then((result) => {
-        console.log("Token is -> " + result.body.access_token)
+        console.log("Token is -> " + JSON.parse(result.body).access_token)
     });
 
 }
