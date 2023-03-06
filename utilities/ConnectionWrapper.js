@@ -1,6 +1,6 @@
 const {https} = require( "https");
 
-function req  (urlOptions, body) {
+function req  (urlOptions, body, resolve) {
   new Promise((resolve, reject) => {
     const handleRequestResponse = (res) => {
       removeRequestListeners();

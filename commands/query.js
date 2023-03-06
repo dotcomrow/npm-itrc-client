@@ -2,7 +2,6 @@ const conWrapper = require('../utilities/ConnectionWrapper')
 
 function query (args) {
 
-
     urlOptions= {
         'method': 'POST',
         'hostname': 'websec.cable.comcast.com',
@@ -10,11 +9,10 @@ function query (args) {
         'maxRedirects': 20
     }
 
-    resp = conWrapper(urlOptions, {});
-    
-
-    access_token=resp.access_token;
-    console.log("Access Token to itrc -> " + access_token)
+    conWrapper(urlOptions, {}, (req, res, body) => {
+        access_token=body.access_token;
+        console.log("Access Token to itrc -> " + access_token)
+    });
 
 }
 
