@@ -19,6 +19,7 @@ function req  (urlOptions, body) {
 
       const handleResponseEnd = () => {
         removeResponseListeners();
+        console.log(Buffer.concat(chunks).toString())
         if (this.logSwitch == true) {console.debug("Request Object", req) }
         if (this.logSwitch == true) {console.debug("Response Object", res) }
         resolve({ req, res, body: Buffer.concat(chunks).toString() });
