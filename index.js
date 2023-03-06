@@ -4,10 +4,10 @@ const query = require('./commands/query')
 
 program
     .command('query')
-    .option('-a, --api <ITRC API Endpoint>', 'HTTPS ITRC API Endpoint').requiredOption(true)
-    .option('-u, --user <ITRC User>', 'ITRC API Enpoint User').requiredOption(true)
-    .option('-p, --password <ITRC Password>', 'ITRC API Password').requiredOption(true)
-    .option('-q, --query <ITRC Query String>', 'ITRC API Query string').requiredOption(true)
+    .option('-a, --api <ITRC API Endpoint>', 'HTTPS ITRC API Endpoint').requiredOption('<api>')
+    .option('-u, --user <ITRC User>', 'ITRC API Enpoint User').requiredOption('<user>')
+    .option('-p, --password <ITRC Password>', 'ITRC API Password').requiredOption('<password>')
+    .option('-q, --query <ITRC Query String>', 'ITRC API Query string').requiredOption('<query>')
     .description('query ITRC system and return values in query string')
     .action(query)
 
