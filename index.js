@@ -11,7 +11,7 @@ program
     .option('-l, --logs <Log switch>', 'Enable debug logs')
     .description('query ITRC system and return values in query string')
     .action((args) => {
-        logVal=Boolean.parse(args.logs)
+        var logVal = (args.logs === 'true');
         if (!logVal) {
             console.log("Logs argument must be either true or false")
         }
