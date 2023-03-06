@@ -41,14 +41,14 @@ function req  (urlOptions, body, resolve) {
       req.removeListener("error", handleRequestError);
     };
 
-    const req = https.request(urlOptions);
-    req.once("response", handleRequestResponse);
-    req.once("error", handleRequestError);
+    const reqt = https.request(urlOptions);
+    reqt.once("response", handleRequestResponse);
+    reqt.once("error", handleRequestError);
 
     if (body) {
-      req.end(body);
+      reqt.end(body);
     } else {
-      req.end();
+      reqt.end();
     }
   });
 }
