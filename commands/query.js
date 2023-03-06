@@ -22,12 +22,7 @@ function query (args) {
             'path': args.query,
             'logs': args.logswitch,
             'headers' : {
-                'Authorization': 'Bearer ' + token,
-                'User-Agent': 'npm-itrc-client',
-                'Accept': '*/*',
-                'Host': args.api,
-                'Accept-Encoding': 'gzip, deflate, br',
-                'Connection': 'keep-alive'
+                'Authorization': 'Bearer ' + token
             }
         }
         
