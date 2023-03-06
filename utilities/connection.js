@@ -1,7 +1,7 @@
 const request = require('requests')
 const util = require('util')
 
-function getConnection (cli) {
+function getConnection (cli, doNext) {
     var https = require('follow-redirects').https;
     var fs = require('fs');
     
@@ -22,17 +22,18 @@ function getConnection (cli) {
 
         res.on("end", function (chunk) {
             var body = Buffer.concat(chunks);
-            access_token = body.access_token;
-            console.log(access_token);
+            resolve({ statusCode, headers, body })
         });
 
         res.on("error", function (error) {
             console.error(error);
         });
+    }).then(function(statusCode, headers, body) {
+        doNext(body.access_token)
     });
 
     req.end();
-    return access_token;
+
 }
 
 module.exports = getConnection
