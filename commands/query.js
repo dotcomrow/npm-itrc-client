@@ -9,10 +9,8 @@ function query (args) {
         'maxRedirects': 20
     }
 
-    conWrapper(urlOptions, null).then((req, res, body) => {
-        console.log(body)
-        console.log(req)
-        console.log(res)
+    conWrapper(urlOptions, null).then((result) => {
+        console.log("Token is -> " + result.body)
     });
 
 }
