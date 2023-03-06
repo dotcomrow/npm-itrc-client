@@ -10,13 +10,15 @@ function req  (urlOptions, body) {
       };
 
       const handleResponseError = (err) => {
+        console.log("Error", err)
         removeResponseListeners();
         reject(err);
       };
 
       const handleResponseEnd = () => {
         removeResponseListeners();
-        console.log(Buffer.concat(chunks).toString())
+        console.debug("Request Object", req)
+        console.debug("Response Object", res)
         resolve({ req, res, body: Buffer.concat(chunks).toString() });
       };
 
@@ -32,6 +34,7 @@ function req  (urlOptions, body) {
     };
 
     const handleRequestError = (err) => {
+      console.log("Error", err)
       reject(err);
     };
 
@@ -47,4 +50,4 @@ function req  (urlOptions, body) {
   });
 }
 
-  module.exports = req
+module.exports = req
