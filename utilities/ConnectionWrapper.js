@@ -40,7 +40,11 @@ function req  (urlOptions, body) {
       reject(err);
     };
     if (this.logSwitch == true) {console.log(urlOptions)}
-    const reqt = https.request(urlOptions);
+    try {
+      const reqt = https.request(urlOptions);
+    } catch (err) {
+      console.log(err)
+    }
     reqt.once("response", handleRequestResponse);
     reqt.once("error", handleRequestError);
 
