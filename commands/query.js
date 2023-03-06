@@ -22,7 +22,8 @@ function query (args) {
             'path': args.query,
             'logs': args.logswitch,
             'headers' : {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token,
+                'Host': args.api
             }
         }
         
