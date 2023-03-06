@@ -2,7 +2,8 @@ const https = require( "https");
 
 function req  (urlOptions, body) {
   return new Promise(function(resolve, reject) {
-    console.log("logging is turned -> " + urlOptions.logs)
+    this.logSwitch=urlOptions.logs
+    console.log("logging is turned -> " + this.logSwitch)
     const handleRequestResponse = (res) => {
       
       const chunks = [];
@@ -11,15 +12,15 @@ function req  (urlOptions, body) {
       };
 
       const handleResponseError = (err) => {
-        if (urlOptions.logs == true) {console.log("Error", err)}
+        if (this.logSwitch == true) {console.log("Error", err)}
         removeResponseListeners();
         reject(err);
       };
 
       const handleResponseEnd = () => {
         removeResponseListeners();
-        if (urlOptions.logs == true) {console.debug("Request Object", req) }
-        if (urlOptions.logs == true) {console.debug("Response Object", res) }
+        if (this.logSwitch == true) {console.debug("Request Object", req) }
+        if (this.logSwitch == true) {console.debug("Response Object", res) }
         resolve({ req, res, body: Buffer.concat(chunks).toString() });
       };
 
@@ -34,11 +35,11 @@ function req  (urlOptions, body) {
       res.once("end", handleResponseEnd);
     };
 
-    const handleRequestError = (err) => {
-      if (urlOptions.logs == true) {console.log("Error", err)}
+    const handleRequestError = (err, urlOptions) => {
+      if (this.logSwitch == true) {console.log("Error", err)}
       reject(err);
     };
-    if (urlOptions.logs == true) {console.log(urlOptions)}
+    if (this.logSwitch == true) {console.log(urlOptions)}
     const reqt = https.request(urlOptions);
     reqt.once("response", handleRequestResponse);
     reqt.once("error", handleRequestError);
