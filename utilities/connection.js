@@ -1,4 +1,5 @@
 const req = require ('./ConnectionWrapper')
+const https = require('https')
 
 function getConnection (args) {
     new Promise((resolve, reject) => {
