@@ -1,4 +1,4 @@
-import https from "https";
+const {https} = require( "https");
 
 export const request = (urlOptions, body) =>
   new Promise((resolve, reject) => {
