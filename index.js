@@ -11,10 +11,10 @@ program
     .description('query ITRC system and return values in query string')
     .action((args) => {
         if (
-            console.log(/[\S\s]+[\S]+/.test(args.api)) ||
-            console.log(/[\S\s]+[\S]+/.test(args.user)) ||
-            console.log(/[\S\s]+[\S]+/.test(args.password)) ||
-            console.log(/[\S\s]+[\S]+/.test(args.query))
+            /[\S\s]+[\S]+/.test(args.api) ||
+            /[\S\s]+[\S]+/.test(args.user) ||
+            /[\S\s]+[\S]+/.test(args.password) ||
+            /[\S\s]+[\S]+/.test(args.query)
         ) {
             process.exitCode=2;
             process.exit();
