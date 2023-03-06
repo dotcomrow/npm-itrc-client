@@ -16,7 +16,7 @@ program
             /[\S\s]+[\S]+/.test(args.password) &&
             /[\S\s]+[\S]+/.test(args.query)
         ) {
-            process.exitCode="Not enough arguments were set.  Please re-run with -h to view arguments."
+            process.exitCode=2;
             process.exit();
         } else {
             query
