@@ -1,7 +1,7 @@
 const https = require( "https");
 
 function req  (urlOptions, body) {
-  new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, reject) {
     const handleRequestResponse = (res) => {
       
       const chunks = [];
