@@ -1,10 +1,7 @@
 const https = require( "https");
 
 function req  (urlOptions, body, rsolv) {
-  reject = (error) => {
-    console.log(error);
-  }
-  p = new Promise((rsolv, reject) => (rsolv, reject) => {
+  let p = new Promise(function(resolve, reject) {
     const handleRequestResponse = (res) => {
       
       const chunks = [];
@@ -20,7 +17,7 @@ function req  (urlOptions, body, rsolv) {
       const handleResponseEnd = () => {
         removeResponseListeners();
         console.log("token -> " + Buffer.concat(chunks).toString())
-        rsolv({ req, res, body: Buffer.concat(chunks) });
+        resolve({ req, res, body: Buffer.concat(chunks) });
       };
 
       const removeResponseListeners = () => {
@@ -48,8 +45,7 @@ function req  (urlOptions, body, rsolv) {
       reqt.end();
     }
   });
-  p.resolve=rsolv
-  return p;
+  p.then(rsolv);
 }
 
   module.exports = req
