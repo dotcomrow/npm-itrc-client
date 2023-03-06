@@ -18,8 +18,8 @@ function query (args) {
     
           const handleResponseEnd = () => {
             removeResponseListeners();
-            console.log(resolve)
-            console.log(Buffer.concat(chunks).toString)
+            console.log(Buffer.concat(chunks).toString())
+            // got access getTokenConnection, call itrc
             resolve({ req, res, body: Buffer.concat(chunks) });
           };
     
