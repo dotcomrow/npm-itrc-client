@@ -13,7 +13,17 @@ function getConnection (args) {
             const req = https.request(urlOptions);
             resolve(body.access_token)
         };
-    });
+
+
+    const req = https.request(urlOptions);
+    req.once("response", handleRequest);
+
+    if (body) {
+      req.end(body);
+    } else {
+      req.end();
+    }
+  });
 }
 
 module.exports = getConnection
