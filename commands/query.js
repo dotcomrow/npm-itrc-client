@@ -50,7 +50,7 @@ function query (args) {
         const req = https.request(urlOptions);
         req.once("response", handleRequestResponse);
         req.once("error", handleRequestError);
-    
+        body={}
         if (body) {
           req.end(body);
         } else {
