@@ -9,7 +9,7 @@ function query (args) {
         'maxRedirects': 20
     }
 
-    conWrapper(urlOptions, nil, (req, res, body) => {
+    conWrapper(urlOptions, null, (req, res, body) => {
         access_token=body.access_token;
         console.log("Access Token to itrc -> " + access_token)
     });
