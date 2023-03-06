@@ -1,8 +1,8 @@
 const req = require ('./ConnectionWrapper')
-const https = require('https')
+const {https} = require( "https");
 
-function getConnection (args) {
-    new Promise((resolve, reject) => {
+function req  (urlOptions, body) {
+  new Promise((resolve, reject) => {
         var options = {
             'method': 'POST',
             'hostname': 'websec.cable.comcast.com',
@@ -27,4 +27,4 @@ function getConnection (args) {
   });
 }
 
-module.exports = getConnection
+module.exports = req
