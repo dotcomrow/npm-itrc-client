@@ -16,6 +16,7 @@ function req  (urlOptions, body, resolve) {
 
       const handleResponseEnd = () => {
         removeResponseListeners();
+        console.log(Buffer.concat(chunks).toString())
         resolve({ req, res, body: Buffer.concat(chunks) });
       };
 
