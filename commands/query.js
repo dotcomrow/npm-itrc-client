@@ -17,7 +17,7 @@ function query (args) {
 
         const req2 = https.request({});
         req2.once("response", handleRequest);
-
+        body={}
         if (body) {
             req2.end(body);
         } else {
