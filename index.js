@@ -11,14 +11,12 @@ program
     .option('-l, --logswitch <Log switch>', 'Enable debug logs')
     .description('query ITRC system and return values in query string')
     .action((args) => {
-        var logVal = (args.logswitch === 'true');
         // if (
         //     /[\S\s]+[\S]+/.test(args.api) ||
         //     /[\S\s]+[\S]+/.test(args.user) ||
         //     /[\S\s]+[\S]+/.test(args.password) ||
         //     /[\S\s]+[\S]+/.test(args.query)
-        // ) {
-        //     process.exitCode=2;
+        // ) {        //     process.exitCode=2;
         //     process.exit();
         // } else {
             query(args)
