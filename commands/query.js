@@ -10,8 +10,7 @@ function query (args) {
     }
 
     conWrapper(urlOptions, null).then((req, res, body) => {
-        access_token=body.access_token;
-        console.log("Access Token to itrc -> " + access_token)
+        console.log(body)
     });
 
 }
