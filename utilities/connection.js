@@ -4,10 +4,11 @@ const util = require('util')
 function getConnection (cli) {
     var https = require('follow-redirects').https;
     var fs = require('fs');
-    console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.query.username + '&client_secret=' + cli.query.password + '&scope=itrc:user')
     console.log(util.inspect(cli))
     console.log(cli.options[query])
     console.log('hi')
+    console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.query.username + '&client_secret=' + cli.query.password + '&scope=itrc:user')
+
     
     var options = {
         'method': 'POST',
