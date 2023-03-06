@@ -1,4 +1,4 @@
-const req = require ('./ConnectionWrapper')
+const reqt = require ('./ConnectionWrapper')
 const {https} = require( "https");
 
 function req  (urlOptions, body) {
@@ -11,7 +11,7 @@ function req  (urlOptions, body) {
         }
 
         const handleRequest = (options, {}) => {
-            const req = https.request(options);
+            const reqt = https.request(options);
             resolve(body.access_token)
         };
 
