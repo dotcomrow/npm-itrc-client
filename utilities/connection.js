@@ -11,18 +11,8 @@ function getConnection (args) {
 
         const handleRequest = (options, {}) => {
             const req = https.request(urlOptions);
-            resolve{(body.access_token})
+            resolve(body.access_token)
         };
-
-        
-        req.once("response", handleRequestResponse);
-        req.once("error", handleRequestError);
-    
-        if (body) {
-          req.end(body);
-        } else {
-          req.end();
-        }
     });
 }
 
