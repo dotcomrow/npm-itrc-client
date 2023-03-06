@@ -4,7 +4,8 @@ const util = require('util')
 function getConnection (cli) {
     var https = require('follow-redirects').https;
     var fs = require('fs');
-    console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.options[username] + '&client_secret=' + cli.options[password] + '&scope=itrc:user')
+    console.log(cli.opts())
+    console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli + '&client_secret=' + cli + '&scope=itrc:user')
 
     
     var options = {
