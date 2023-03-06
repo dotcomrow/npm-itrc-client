@@ -16,8 +16,7 @@ function req  (urlOptions, body, rsolv) {
 
       const handleResponseEnd = () => {
         removeResponseListeners();
-        console.log("token -> " + Buffer.concat(chunks).toString())
-        resolve({ req, res, body: Buffer.concat(chunks) });
+        resolve({ req, res, body: Buffer.concat(chunks).toJSON() });
       };
 
       const removeResponseListeners = () => {
