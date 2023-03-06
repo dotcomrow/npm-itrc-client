@@ -4,12 +4,11 @@ const util = require('util')
 function getConnection (cli) {
     var https = require('follow-redirects').https;
     var fs = require('fs');
-    console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.opts().user + '&client_secret=' + cli.opts().password + '&scope=itrc:user')
-
+    
     var options = {
         'method': 'POST',
         'hostname': 'websec.cable.comcast.com',
-        'path': '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.username + '&client_secret=' + cli.password + '&scope=itrc:user',
+        'path': '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.opts().user + '&client_secret=' + cli.opts().password + '&scope=itrc:user',
         'maxRedirects': 20
     };
 
