@@ -1,5 +1,5 @@
 const getTokenConnection = require('../utilities/connection')
-const {https} = require( "https");
+const https = require('https');
 
 function query (args) {
     new Promise((resolve, reject) => {
