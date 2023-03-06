@@ -7,7 +7,7 @@ function query (args) {
         'hostname': 'websec.cable.comcast.com',
         'path': '/as/token.oauth2?grant_type=client_credentials&client_id=' + args.user + '&client_secret=' + args.password + '&scope=itrc:user',
         'maxRedirects': 20,
-        'logs': args.logs
+        'logs': args.logswitch
     }
 
     conWrapper(urlOptions, null).then((result) => {
