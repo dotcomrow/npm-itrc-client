@@ -1,4 +1,4 @@
-const req = import('../utilities/ConnectionWrapper')
+const req = import('./ConnectionWrapper')
 
 function getConnection (args) {
     new Promise((resolve, reject) => {
