@@ -2,6 +2,7 @@ const https = require( "https");
 
 function req  (urlOptions, body) {
   return new Promise(function(resolve, reject) {
+    console.log("logging is turned -> " + urlOptions.logs)
     const handleRequestResponse = (res) => {
       
       const chunks = [];
