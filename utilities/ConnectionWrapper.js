@@ -10,15 +10,15 @@ function req  (urlOptions, body) {
       };
 
       const handleResponseError = (err) => {
-        console.log("Error", err)
+        if (urlOptions.logs == true) {console.log("Error", err)}
         removeResponseListeners();
         reject(err);
       };
 
       const handleResponseEnd = () => {
         removeResponseListeners();
-        console.debug("Request Object", req)
-        console.debug("Response Object", res)
+        if (urlOptions.logs == true) {console.debug("Request Object", req) }
+        if (urlOptions.logs == true) {console.debug("Response Object", res) }
         resolve({ req, res, body: Buffer.concat(chunks).toString() });
       };
 

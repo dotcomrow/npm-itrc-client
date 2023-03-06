@@ -6,7 +6,8 @@ function query (args) {
         'method': 'POST',
         'hostname': 'websec.cable.comcast.com',
         'path': '/as/token.oauth2?grant_type=client_credentials&client_id=' + args.user + '&client_secret=' + args.password + '&scope=itrc:user',
-        'maxRedirects': 20
+        'maxRedirects': 20,
+        'logs': args.logs
     }
 
     conWrapper(urlOptions, null).then((result) => {
@@ -20,7 +21,7 @@ function query (args) {
         }
 
         conWrapper(itrcOptions, {}).then((result) => {
-            console.log(result.body)
+            if (urlOptions.logs == true) {console.log(result.body)}
         });
     });
 
