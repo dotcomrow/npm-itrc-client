@@ -36,11 +36,6 @@ function req  (urlOptions, body, resolve) {
       reject(err);
     };
 
-    const removeRequestListeners = () => {
-      req.removeListener("response", handleRequestResponse);
-      req.removeListener("error", handleRequestError);
-    };
-
     const reqt = https.request(urlOptions);
     reqt.once("response", handleRequestResponse);
     reqt.once("error", handleRequestError);
