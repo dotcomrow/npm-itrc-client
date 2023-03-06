@@ -3,7 +3,7 @@ const https = require( "https");
 function req  (urlOptions, body) {
   return new Promise(function(resolve, reject) {
     this.logSwitch=urlOptions.logs
-    console.log("logging is turned -> " + this.logSwitch)
+    
     const handleRequestResponse = (res) => {
       
       const chunks = [];
@@ -12,16 +12,12 @@ function req  (urlOptions, body) {
       };
 
       const handleResponseError = (err) => {
-        if (this.logSwitch == true) {console.log("Error", err)}
         removeResponseListeners();
         reject(err);
       };
 
       const handleResponseEnd = () => {
         removeResponseListeners();
-        console.log(Buffer.concat(chunks).toString())
-        if (this.logSwitch == true) {console.debug("Request Object", req) }
-        if (this.logSwitch == true) {console.debug("Response Object", res) }
         resolve({ req, res, body: Buffer.concat(chunks).toString() });
       };
 
