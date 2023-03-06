@@ -9,7 +9,7 @@ function getConnection (args, doNext) {
         'maxRedirects': 20
     }
 
-    request(options, {}).then((req, req, body) => {
+    request(options, {}).then((req, res, body) => {
         console.log(body)
         doNext(body.access_token)
     })
