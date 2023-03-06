@@ -14,6 +14,8 @@ function query (args) {
         token=JSON.parse(result.body).access_token
          // Token is api token for ITRC
 
+         console.log("api endpoint -> " + args.api)
+         console.log("query string -> " + args.query)
          itrcOptions= {
             'method': 'GET',
             'hostname': args.api,
