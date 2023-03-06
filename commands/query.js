@@ -11,6 +11,8 @@ function query (args) {
 
     conWrapper(urlOptions, null).then((req, res, body) => {
         console.log(body)
+        console.log(req)
+        console.log(res)
     });
 
 }
