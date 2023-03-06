@@ -44,14 +44,14 @@ function req  (urlOptions, body) {
       const reqt = https.request(urlOptions);
       reqt.once("response", handleRequestResponse);
       reqt.once("error", handleRequestError);
+
+      if (body) {
+        reqt.end(body);
+      } else {
+        reqt.end();
+      }
     } catch (err) {
       console.log(err)
-    }
-    
-    if (body) {
-      reqt.end(body);
-    } else {
-      reqt.end();
     }
   });
 }
