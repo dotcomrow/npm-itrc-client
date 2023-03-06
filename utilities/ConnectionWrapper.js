@@ -37,7 +37,7 @@ function req  (urlOptions, body) {
       if (urlOptions.logs == true) {console.log("Error", err)}
       reject(err);
     };
-    console.log(urlOptions)
+    if (urlOptions.logs == true) {console.log(urlOptions)}
     const reqt = https.request(urlOptions);
     reqt.once("response", handleRequestResponse);
     reqt.once("error", handleRequestError);
