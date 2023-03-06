@@ -4,7 +4,7 @@ function req  (urlOptions, body, rsolv) {
   reject = (error) => {
     console.log(error);
   }
-  p = new Promise((resolve, reject) => (rsolv, reject) => {
+  p = new Promise((rsolv, reject) => (rsolv, reject) => {
     const handleRequestResponse = (res) => {
       
       const chunks = [];
@@ -20,7 +20,7 @@ function req  (urlOptions, body, rsolv) {
       const handleResponseEnd = () => {
         removeResponseListeners();
         console.log("token -> " + Buffer.concat(chunks).toString())
-        resolve({ req, res, body: Buffer.concat(chunks) });
+        rsolv({ req, res, body: Buffer.concat(chunks) });
       };
 
       const removeResponseListeners = () => {
