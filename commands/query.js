@@ -1,5 +1,4 @@
 const getConnection = require('../utilities/connection')
-const connection = require('../utilities/connection')
 
 function query (args) {
     getConnection(args, (token) => {
