@@ -21,7 +21,7 @@ function query (args) {
             'hostname': args.api,
             'path': args.query
         }
-
+        console.log("here", args.logswitch, urlOptions.logs)
         conWrapper(itrcOptions, "{}").then((result) => {
             if (urlOptions.logs == true) {console.log(result.body)}
         });

@@ -34,7 +34,7 @@ function req  (urlOptions, body) {
     };
 
     const handleRequestError = (err) => {
-      console.log("Error", err)
+      if (urlOptions.logs == true) {console.log("Error", err)}
       reject(err);
     };
 
