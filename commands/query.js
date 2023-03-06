@@ -10,7 +10,18 @@ function query (args) {
     }
 
     conWrapper(urlOptions, null).then((result) => {
-        console.log("Token is -> " + JSON.parse(result.body).access_token)
+        token=JSON.parse(result.body).access_token
+         // Token is api token for ITRC
+
+         itrcOptions= {
+            'method': 'GET',
+            'hostname': args.api,
+            'path': args.query
+        }
+
+        conWrapper(itrcOptions, {}).then((result) => {
+            console.log(result.body)
+        });
     });
 
 }
