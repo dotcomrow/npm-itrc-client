@@ -42,12 +42,12 @@ function req  (urlOptions, body) {
     if (this.logSwitch == true) {console.log(urlOptions)}
     try {
       const reqt = https.request(urlOptions);
+      reqt.once("response", handleRequestResponse);
+      reqt.once("error", handleRequestError);
     } catch (err) {
       console.log(err)
     }
-    reqt.once("response", handleRequestResponse);
-    reqt.once("error", handleRequestError);
-
+    
     if (body) {
       reqt.end(body);
     } else {
