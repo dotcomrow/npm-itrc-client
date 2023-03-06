@@ -8,7 +8,6 @@ program
     .option('-u, --user <ITRC User>', 'ITRC API Enpoint User')
     .option('-p, --password <ITRC Password>', 'ITRC API Password')
     .option('-q, --query <ITRC Query String>', 'ITRC API Query string')
-    .option('-l, --logswitch <Log switch>', 'Enable debug logs')
     .description('query ITRC system and return values in query string')
     .action((args) => {
         // if (
