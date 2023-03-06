@@ -10,17 +10,17 @@ program
     .option('-q, --query <ITRC Query String>', 'ITRC API Query string')
     .description('query ITRC system and return values in query string')
     .action((args) => {
-        if (
-            /[\S\s]+[\S]+/.test(args.api) &&
-            /[\S\s]+[\S]+/.test(args.user) &&
-            /[\S\s]+[\S]+/.test(args.password) &&
-            /[\S\s]+[\S]+/.test(args.query)
-        ) {
-            process.exitCode=2;
-            process.exit();
-        } else {
+        // if (
+            echo (/[\S\s]+[\S]+/.test(args.api))
+            echo(/[\S\s]+[\S]+/.test(args.user))
+            echo(/[\S\s]+[\S]+/.test(args.password))
+            echo(/[\S\s]+[\S]+/.test(args.query))
+        // ) {
+            // process.exitCode=2;
+            // process.exit();
+        // } else {
             query
-        }
+        // }
     })
 
 program
