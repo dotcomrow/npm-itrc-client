@@ -10,17 +10,8 @@ program
     .option('-q, --query <ITRC Query String>', 'ITRC API Query string')
     .description('query ITRC system and return values in query string')
     .action((args) => {
-        // if (
-            console.log(/[\S\s]+[\S]+/.test(args.api))
-            console.log(/[\S\s]+[\S]+/.test(args.user))
-            console.log(/[\S\s]+[\S]+/.test(args.password))
-            console.log(/[\S\s]+[\S]+/.test(args.query))
-        // ) {
-            // process.exitCode=2;
-            // process.exit();
-        // } else {
+        // add validation and stuff
             query
-        // }
     })
 
 program
