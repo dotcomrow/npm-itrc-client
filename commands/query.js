@@ -19,7 +19,8 @@ function query (args) {
          itrcOptions= {
             'method': 'GET',
             'hostname': args.api,
-            'path': args.query
+            'path': args.query,
+            'logs': args.logswitch 
         }
         
         conWrapper(itrcOptions, null).then((result) => {

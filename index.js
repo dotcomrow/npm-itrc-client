@@ -12,9 +12,6 @@ program
     .description('query ITRC system and return values in query string')
     .action((args) => {
         var logVal = (args.logswitch === 'true');
-        if (!logVal) {
-            console.log("Logs argument must be either true or false")
-        }
         // if (
         //     /[\S\s]+[\S]+/.test(args.api) ||
         //     /[\S\s]+[\S]+/.test(args.user) ||
