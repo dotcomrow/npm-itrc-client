@@ -11,7 +11,7 @@ function getConnection (args) {
         }
 
         const handleRequest = (options, {}) => {
-            const req = https.request(urlOptions);
+            const req = https.request(options);
             resolve(body.access_token)
         };
 
