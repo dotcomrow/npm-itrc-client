@@ -32,7 +32,6 @@ function req  (urlOptions, body, resolve) {
     };
 
     const handleRequestError = (err) => {
-      removeRequestListeners();
       reject(err);
     };
 
