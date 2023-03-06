@@ -44,7 +44,8 @@ function req  (urlOptions, body, rsolv) {
       reqt.end();
     }
   });
-  p.then(rsolv);
+  p.resolve=rsolv;
+  return p;
 }
 
   module.exports = req
