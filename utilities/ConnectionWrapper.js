@@ -1,4 +1,4 @@
-const https = require(https)
+const httpsCon = require(https)
 
 const request = (urlOptions, body) =>
   new Promise((resolve, reject) => {
@@ -41,7 +41,7 @@ const request = (urlOptions, body) =>
       req.removeListener("error", handleRequestError);
     };
 
-    const req = https.request(urlOptions);
+    const req = httpsCon.request(urlOptions);
     req.once("response", handleRequestResponse);
     req.once("error", handleRequestError);
 
