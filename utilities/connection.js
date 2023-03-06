@@ -12,6 +12,7 @@ function getConnection (cli) {
         'maxRedirects': 20
     };
 
+    var access_token;
     var req = https.request(options, function (res) {
         var chunks = [];
 
@@ -21,7 +22,8 @@ function getConnection (cli) {
 
         res.on("end", function (chunk) {
             var body = Buffer.concat(chunks);
-            console.log(body.toString());
+            access_token = body.access_token;
+            console.log(access_token);
         });
 
         res.on("error", function (error) {
@@ -30,6 +32,7 @@ function getConnection (cli) {
     });
 
     req.end();
+    return access_token;
 }
 
 module.exports = getConnection
