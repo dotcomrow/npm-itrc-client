@@ -1,4 +1,4 @@
-const { req } = require('./ConnectionWrapper');
+const req = import('../utilities/ConnectionWrapper')
 
 function getConnection (args, doNext) {
     
