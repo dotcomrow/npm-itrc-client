@@ -1,8 +1,10 @@
 const https = require( "https");
 
 function req  (urlOptions, body, rsolv) {
-  console.log("test")
-  p = new Promise((resolve, reject) => {
+  reject = (error) => {
+    console.log(error);
+  }
+  p = new Promise((resolve, reject) => (rsolv, reject) => {
     const handleRequestResponse = (res) => {
       
       const chunks = [];
