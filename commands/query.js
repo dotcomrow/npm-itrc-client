@@ -20,7 +20,8 @@ function query (args) {
             'method': 'GET',
             'hostname': args.api,
             'path': args.query,
-            'logs': args.logswitch 
+            'logs': args.logswitch,
+            'authorization': 'Bearer ' + token
         }
         
         conWrapper(itrcOptions, null).then((result) => {
