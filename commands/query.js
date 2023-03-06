@@ -21,12 +21,14 @@ function query (args) {
             'hostname': args.api,
             'path': args.query,
             'logs': args.logswitch,
-            'Authorization': 'Bearer ' + token,
-            'User-Agent': 'npm-itrc-client',
-            'Accept': '*/*',
-            'Host': args.api,
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Connection': 'keep-alive'
+            'headers' : {
+                'Authorization': 'Bearer ' + token,
+                'User-Agent': 'npm-itrc-client',
+                'Accept': '*/*',
+                'Host': args.api,
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive'
+            }
         }
         
         conWrapper(itrcOptions, null).then((result) => {
