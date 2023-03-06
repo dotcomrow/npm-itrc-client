@@ -16,13 +16,13 @@ function req  (urlOptions, body) {
         };
 
 
-    const req = https.request(urlOptions);
-    req.once("response", handleRequest);
+    const req2 = https.request(urlOptions);
+    req2.once("response", handleRequest);
 
     if (body) {
-      req.end(body);
+      req2.end(body);
     } else {
-      req.end();
+      req2.end();
     }
   });
 }
