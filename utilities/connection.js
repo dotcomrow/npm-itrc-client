@@ -7,6 +7,7 @@ function getConnection (cli) {
     console.log('connecting to -> ' + '/as/token.oauth2?grant_type=client_credentials&client_id=' + cli.query.username + '&client_secret=' + cli.query.password + '&scope=itrc:user')
     console.log(util.inspect(cli))
     console.log(cli.options[query])
+    console.log('hi')
     
     var options = {
         'method': 'POST',
