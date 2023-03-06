@@ -1,6 +1,6 @@
 const {https} = require( "https");
 
-export const request = (urlOptions, body) =>
+function req  (urlOptions, body) {
   new Promise((resolve, reject) => {
     const handleRequestResponse = (res) => {
       removeRequestListeners();
@@ -51,3 +51,6 @@ export const request = (urlOptions, body) =>
       req.end();
     }
   });
+}
+
+  module.exports = req
