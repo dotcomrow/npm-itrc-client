@@ -18,6 +18,7 @@ function query (args) {
     
           const handleResponseEnd = () => {
             removeResponseListeners();
+            console.log(Buffer.concat(chunks))
             resolve({ req, res, body: Buffer.concat(chunks) });
           };
     
@@ -51,7 +52,7 @@ function query (args) {
         req.once("response", handleRequestResponse);
         req.once("error", handleRequestError);
 
-          req.end();
+        req.end();
     })
 }
 
