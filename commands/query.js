@@ -22,7 +22,7 @@ function query (args) {
             'path': args.query
         }
 
-        conWrapper(itrcOptions, {}).then((result) => {
+        conWrapper(itrcOptions, "{}").then((result) => {
             if (urlOptions.logs == true) {console.log(result.body)}
         });
     });
