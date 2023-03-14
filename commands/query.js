@@ -1,4 +1,4 @@
-import conWrapper from '../utilities/ConnectionWrapper';
+const conWrapper = require('../utilities/ConnectionWrapper')
 
 function query (args) {
 
