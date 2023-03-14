@@ -11,7 +11,7 @@ function query (args) {
 
     conWrapper(urlOptions, null).then((result) => {
         token=JSON.parse(result.body).access_token
-         // Token is api token for ITRC
+         // Token is api token for ITRC test
 
          itrcOptions= {
             'method': 'GET',
