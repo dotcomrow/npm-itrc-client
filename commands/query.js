@@ -1,4 +1,4 @@
-const conWrapper = require('../utilities/ConnectionWrapper')
+import conWrapper from '../utilities/ConnectionWrapper';
 
 function query (args) {
 
@@ -21,7 +21,7 @@ function query (args) {
                 'Authorization': ('Bearer ' + token)
             }
         }
-        
+         console.log(itrcOptions)
         conWrapper(itrcOptions, null).then((result) => {
             console.log(result.body)
         });
@@ -29,4 +29,4 @@ function query (args) {
 
 }
 
-module.exports = query
+export default query
