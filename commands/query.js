@@ -21,7 +21,6 @@ function query (args) {
                 'Authorization': ('Bearer ' + token)
             }
         }
-         console.log(itrcOptions)
         conWrapper(itrcOptions, null).then((result) => {
             console.log(result.body)
         });
