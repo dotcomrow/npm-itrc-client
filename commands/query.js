@@ -28,3 +28,5 @@ function query (args) {
     });
 
 }
+
+module.exports = query
