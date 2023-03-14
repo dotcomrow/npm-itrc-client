@@ -28,5 +28,3 @@ function query (args) {
     });
 
 }
-
-export default query
